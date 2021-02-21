@@ -1,6 +1,7 @@
 #include "Header.h"
 #include <iomanip>
 #define watch(x) cout << (#x) << " is " << (x) << endl
+
 struct Testcase
 {
 	Testcase(int test_number){
@@ -33,10 +34,10 @@ public:
 
 	//what i used to brute force some answers
 	static void bruteforce() {
-		unsigned int a{ 4294967294 }, y{ 3 };
+		int a{ 214748340 }, y{ 2 };
 		cout << a + 1 << endl;
 		while (1) {
-			if (a + y != 0 && a + y < a) {
+			if (a + y != 0 && a + y < 0) {
 				cout << "a: " << a << endl;
 				break;
 			}
@@ -54,7 +55,7 @@ public:
 
 	static void part2() {
 		Testcase part2(2);
-		int a = 2147483650, b = 2;
+		int a = 2147483646, b = 2;
 		cout << "(a + b) < 0 (" << (a + b < 0) << ")" << endl;
 		cout << "a= " << a << endl << "b= " << b << endl;
 		cout << "a + b = " << a + b << endl;
@@ -66,7 +67,6 @@ public:
 		cout << "(a + b) > 0 (" << (a + b > 0) << ")" << endl;
 		cout << "a= " << a << endl << "b= " << b << endl;
 		cout << "a + b = " << a + b << endl;
-
 	}
 
 	static void part4() {
@@ -75,22 +75,19 @@ public:
 		cout << "(a+1.) = " << a + 1. << endl;
 		cout << "a= " << a << endl;
 		cout << a << " + 1. = " << a + 1. << endl;
-
-
 	}
 	static void part5() {
 		Testcase part5(5);
-		double a = 1, b = 1e20, c = -1e20;;
+		double a = 1, b = 1e20, c = -1e20;
 		double x = (a + b) + c, y = (c + b) + a;;
 		cout << "(a+b)+c != (c+b)+a (" << (y != x) << ")" << endl;
 		cout << "a= " << a << endl << "b= " << b << endl;
-		cout << "x = ("<< a << "+" << b << ") + " << a << endl;
+		cout << "x = ("<< a << "+" << b << ") + " << c << endl;
 		cout << "y = (" << c << "+" << b << ") + " << a << endl;
-
 	}
 	static void part6() {
 		Testcase part6(6);
-		cout << "pow(-2., 3) = " << pow(-2., 3) << ", pow(-2., 3.0) = " << ", pow(-2., 3.00000000001) = " << pow(-2., 3.00000000001) << endl;
+		cout << "pow(-2., 3) = " << pow(-2., 3) << ", pow(-2., 3.0) = "<< pow(-2., 3.0) << ", pow(-2., 3.00000000001) = " << pow(-2., 3.00000000001) << endl;
 	}
 
 	static void part7() {
@@ -109,8 +106,8 @@ public:
 
 	static void part9() {
 		Testcase part9(9);
-		for (int i = 33; i < 64; i++)
-			cout << i << " " << char(i) << "\t" << (i+32) << "\t" << char(i+32) << endl;
+		for (int i = 32; i <= 64; i++)
+			cout << i << " " << char(i) << "\t" << (i+32) << " " << char(i+32) << "\t" << (i + 64) << " " << char(i + 64) << endl;
 	}
 
 	static void part10() {

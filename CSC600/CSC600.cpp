@@ -9,7 +9,7 @@
 
 int main()
 {
-
+	//Operations::bruteforce();
 	Operations::part1();
 	Operations::part2();
 	Operations::part3();
